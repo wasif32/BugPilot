@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState} from "react";
 import { useAuth } from "@/components/AuthProvider";
 import api from "@/lib/api";
 
@@ -25,18 +25,36 @@ interface Stats {
   completed: number;
 }
 
-type ActivityType = "info" | "success" | "warning";
+// interface Project {
+//   _id: string;
+//   name: string;
+//   description: string;
+//   createdBy: string;
+//   __v: number;
+// }
 
-interface Activity {
-  message: string;
-  type: ActivityType;
+interface IPopulatedUser {
+  _id: string;
+  name: string;
+  email: string;
+}
+
+// Interface for a single member entry within the 'members' array of a project.
+// 'user' will be the populated IPopulatedUser object.
+interface IMember {
+  _id: string; // The unique ID of this specific member entry
+  user: IPopulatedUser; // The populated user object
+  role: 'admin' | 'developer' | 'viewer';
 }
 
 interface Project {
   _id: string;
   name: string;
-  description: string;
-  createdBy: string;
+  description?: string;
+  createdBy: IPopulatedUser;
+  members: IMember[];
+  createdAt: string;
+  updatedAt: string;
   __v: number;
 }
 
@@ -179,12 +197,3 @@ function StatCard({
   );
 }
 
-// --- Utility for Activity Icon ---
-function getActivityIcon(type: ActivityType) {
-  const icons: Record<ActivityType, JSX.Element> = {
-    success: <CheckCircle2 className="w-4 h-4 text-green-400" />,
-    warning: <AlertCircle className="w-4 h-4 text-yellow-400" />,
-    info: <Info className="w-4 h-4 text-blue-400" />,
-  };
-  return <span>{icons[type]}</span>;
-}

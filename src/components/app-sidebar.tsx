@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Home, FolderOpenDot} from "lucide-react";
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import { Avatar} from "@/components/ui/avatar";
 import bugpilotlogo from "./bugpilot-logo.png";
 import Image from "next/image";
 import { LogOut } from "lucide-react";

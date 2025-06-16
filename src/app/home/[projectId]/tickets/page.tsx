@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
-import { Plus, Calendar, Users, Target, ClipboardList } from 'lucide-react';
+import { Calendar, Users, Target, ClipboardList } from 'lucide-react';
 import { useParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 import api from '@/lib/api';

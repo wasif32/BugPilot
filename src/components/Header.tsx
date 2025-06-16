@@ -1,5 +1,3 @@
-// src/components/Header.tsx
-import Link from "next/link";
 import { SidebarTrigger } from "@/components/ui/sidebar"; // Import SidebarTrigger
 import { useAuth } from "./AuthProvider";
 

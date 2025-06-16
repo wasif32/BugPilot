@@ -1,7 +1,5 @@
-import { GalleryVerticalEnd } from "lucide-react"
 import { Avatar, AvatarImage } from "@/components/ui/avatar"
 import { LoginForm } from "@/components/login-form"
-import Image from "next/image"; 
 
 export default function LoginPage() {
   return (

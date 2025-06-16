@@ -1,26 +1,11 @@
 // This file is a client component because AppSidebar and Header (with SidebarTrigger) use client-side hooks.
 "use client";
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
 import { SidebarProvider } from "@/components/ui/sidebar"; // Your Sidebar Provider
 import { AppSidebar } from "@/components/app-sidebar";     // Your custom sidebar
 import { Header } from "@/components/Header";
-import { useAuth } from "@/components/AuthProvider";// Your custom header
 import { Toaster } from "@/components/ui/sonner";
 
 export default function HomeLayout({ children }: { children: React.ReactNode }) {
-  const { user, token } = useAuth();
-  const router = useRouter();
-
-  // useEffect(() => {
-  //   if (!token || !user) {
-  //     router.push("/login")
-  //   }
-  // }, [token, user, router])
-
-  // if (!token || !user) {
-  //   return <div className="flex justify-center items-center min-h-screen bg-gray-950 text-white">Redirecting to login...</div>
-  // }
 
   return (
     <SidebarProvider> {/* This context provider manages the state of the sidebar */}
