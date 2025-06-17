@@ -239,6 +239,7 @@ export default function TicketsPage() {
             const { data } = await api.get<ITicket[]>(`/tickets/project/${projectId}`, {
                 headers: { Authorization: `Bearer ${token}` },
             });
+            console.log("Fetched tickets:", data); // Debug log
             setTickets(data);
         } catch (err) {
             console.error("Ticket fetch failed:", err);
